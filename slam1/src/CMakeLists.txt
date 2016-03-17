@@ -1,0 +1,7 @@
+#add_executable(main main.cpp)
+find_package(PCL REQUIRED)
+find_package(OpenCV REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+include_directories(${OpenCV_INCLUDE_DIRS})
+add_executable(generate_pointcloud generatePointCloud.cpp)
+target_link_libraries(generate_pointcloud ${OpenCV_LIBS} ${PCL_LIBRARIES})
