@@ -1,0 +1,8 @@
+#add_executable(main main.cpp)
+find_package(PCL REQUIRED)
+find_package(OpenCV REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+include_directories(${OpenCV_INCLUDE_DIRS})
+#add_executable(generate_pointcloud main.cpp)
+add_library(slamBase slamBase.cpp ../include/slamBase.h)
+target_link_libraries(slamBase ${OpenCV_LIBS} ${PCL_LIBRARIES})
